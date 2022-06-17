@@ -3,27 +3,27 @@
   <video-demo ref="videoDemo"/>
   <div class="opera-btn">
     <van-button type="primary" size="mini" @click="goLogin">返回首页</van-button>
+    <van-button type="primary" size="mini" @click="changeVideo">切换视频</van-button>
   </div>
 </template>
 <script lang="ts" setup="props">
-  import {reactive,onMounted,ref} from "vue"
+  import {reactive,ref} from "vue"
   import { useRouter } from "vue-router";
   import VideoDemo from "@/components/video.vue"
   const router = useRouter();
   const goLogin = () => {
     router.push("/");
   };
-  let videoDemo=ref(null)
+  const videoDemo=ref(null)
   let options=reactive({  
             container:'',
             live:false,
             autoplay:true,
             theme:'#b7daff',
           })
-  onMounted(():void=>{
-    console.log(33,videoDemo)
-  })
-   
+  const changeVideo=()=>{
+      videoDemo.value.init()
+  }
 </script>
 <style lang="less" scoped>
   .opera-btn{
