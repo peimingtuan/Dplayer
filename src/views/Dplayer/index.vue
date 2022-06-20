@@ -1,9 +1,12 @@
 <template>
-  <h1>Dplayer播放器</h1>
+  <h1>点播</h1>
   <video-demo ref="videoDemo"/>
   <div class="opera-btn">
+    <van-button type="primary" size="mini" @click="setPlayer">暂停播放</van-button>
+    <van-button type="primary" size="mini" @click="seekTime">跳转到指定时间</van-button>
+    <van-button type="primary" size="mini" @click="returnPlayTime">返回当前播放时间</van-button>
+    <van-button type="primary" size="mini" @click="changeVideo">切换m3u8视频</van-button>
     <van-button type="primary" size="mini" @click="goLogin">返回首页</van-button>
-    <van-button type="primary" size="mini" @click="changeVideo">切换视频</van-button>
   </div>
 </template>
 <script lang="ts" setup="props">
@@ -21,8 +24,21 @@
             autoplay:true,
             theme:'#b7daff',
           })
+  //切换视频        
   const changeVideo=()=>{
       videoDemo.value.init()
+  }
+  //暂停、播放
+  const setPlayer=()=>{
+    
+  }
+  //跳转指定时间
+  const seekTime=()=>{
+
+  }
+  //返回当前播放时间
+  const returnPlayTime=()=>{
+
   }
 </script>
 <style lang="less" scoped>

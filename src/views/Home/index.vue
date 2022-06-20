@@ -1,8 +1,9 @@
 <template>
   <div>
     <h1 class="text">我是首页</h1>
-    <div class="login">
-      <van-button type="primary" size="small" @click="goLogin">跳转播放页</van-button>
+    <div class="main">
+       <van-button type="primary" size="small" @click="goZb">跳转Dplayer直播页</van-button><br/><br/>
+      <van-button type="primary" size="small" @click="goPlayer">跳转Dplayer点播页</van-button>
     </div>
   </div>
 </template>
@@ -16,12 +17,16 @@
         color: "#333",
       });
       let router=useRouter()
-      const goLogin=()=>{
+      const goZb=()=>{
+        router.push('zb')
+      }
+      const goPlayer=()=>{
         router.push('Dplayer')
       }
       return {
         state,
-        goLogin
+        goZb,
+        goPlayer
       }
     }
   })

@@ -13,10 +13,19 @@ const routes: Array<RouteRecordRaw> = [
     path: "/Dplayer",
     name: "Dplayer",
     meta: {
-      title: "播放器",
+      title: "点播",
       keepAlive: true
     },
     component: () => import("../views/Dplayer/index.vue"),
+  },
+  {
+    path: "/zb",
+    name: "zb",
+    meta: {
+      title: "直播",
+      keepAlive: true
+    },
+    component: () => import("../views/Dplayer/zb.vue"),
   },
 ];
 const router = createRouter({
