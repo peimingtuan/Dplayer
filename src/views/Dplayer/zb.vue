@@ -4,7 +4,7 @@
   <div class="opera-btn">
     <van-button type="primary" size="mini" @click="openCamera">打开摄像头</van-button>
     <van-button type="primary" size="mini" @click="closeCamera">关闭摄像头</van-button>
-     <van-button type="primary" size="mini" @click="goPortal">返回首页</van-button>
+    <van-button type="primary" size="mini" @click="goPortal">返回首页</van-button>
   </div>
 </template>
 <script lang="ts" setup="props">
@@ -16,19 +16,27 @@
     router.push("/");
   };
   const videoDemo=ref(null)
-  let options=reactive({  
-            container:'',
-            live:false,
-            autoplay:true,
-            theme:'#b7daff',
-          })
-  //打开摄像头        
+  let mediaStreamTrack=null
+  //打开摄像头
   const openCamera=()=>{
-      
+    navigator.mediaDevices.getUserMedia({
+      audio:false,
+      video:true,
+      //video:{facingMode:"environment"}
+    }).then((stream)=>{
+      console.log("stream:",stream)
+      mediaStreamTrack=stream
+      videoDemo.value.builtZb(stream)
+    }).catch(err=>{
+      console.log(err)
+    })
   }
   //关闭摄像头
   const closeCamera=()=>{
-
+    mediaStreamTrack.getVideoTracks().forEach((track)=>{
+      console.log("track:",track)
+      track.stop()
+    })
   }
 </script>
 <style lang="less" scoped>

@@ -9,6 +9,7 @@ specifiers:
   axios: ^0.21.1
   babel-plugin-import: ^1.13.3
   dplayer: ^1.26.0
+  hls.js: ^1.1.5
   less: ^4.1.1
   lib-flexible: ^0.3.2
   postcss-pxtorem: ^5.1.1
@@ -23,6 +24,7 @@ specifiers:
 dependencies:
   axios: 0.21.4
   dplayer: 1.26.0
+  hls.js: 1.1.5
   lib-flexible: 0.3.2
   vant: 3.5.0_vue@3.2.37
   vue: 3.2.37
@@ -1128,6 +1130,10 @@ packages:
   /highlight.js/10.7.3:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
     dev: true
+
+  /hls.js/1.1.5:
+    resolution: {integrity: sha512-mQX5TSNtJEzGo5HPpvcQgCu+BWoKDQM6YYtg/KbgWkmVAcqOCvSTi0SuqG2ZJLXxIzdnFcKU2z7Mrw/YQWhPOA==}
+    dev: false
 
   /https-proxy-agent/5.0.1:
     resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}

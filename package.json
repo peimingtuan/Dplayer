@@ -4,12 +4,14 @@
   "author": "Evan-Pei",
   "scripts": {
     "dev": "vite",
-    "build": "vuedx-typecheck . && vite build",
+    "build": "vite build",
+    "build:check": "vuedx-typecheck . && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "dplayer": "^1.26.0",
+    "hls.js": "^1.1.5",
     "lib-flexible": "^0.3.2",
     "vant": "^3.0.6",
     "vue": "^3.0.5",
